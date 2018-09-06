@@ -15,7 +15,6 @@
 		364B9C1221403C76006D269B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364B9C1121403C76006D269B /* Assets.xcassets */; };
 		364B9C1521403C76006D269B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 364B9C1321403C76006D269B /* LaunchScreen.storyboard */; };
 		364B9C1D21405F17006D269B /* GameElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364B9C1C21405F17006D269B /* GameElements.swift */; };
-		364B9C1F21406219006D269B /* Jumpy Jump in Resources */ = {isa = PBXBuildFile; fileRef = 364B9C1E21406219006D269B /* Jumpy Jump */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		364B9C1421403C76006D269B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		364B9C1621403C76006D269B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		364B9C1C21405F17006D269B /* GameElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElements.swift; sourceTree = "<group>"; };
-		364B9C1E21406219006D269B /* Jumpy Jump */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Jumpy Jump"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +63,6 @@
 				364B9C0421403C74006D269B /* AppDelegate.swift */,
 				364B9C0821403C74006D269B /* Actions.sks */,
 				364B9C0A21403C74006D269B /* GameScene.swift */,
-				364B9C1E21406219006D269B /* Jumpy Jump */,
 				364B9C1C21405F17006D269B /* GameElements.swift */,
 				364B9C0C21403C74006D269B /* GameViewController.swift */,
 				364B9C0E21403C74006D269B /* Main.storyboard */,
@@ -137,7 +134,6 @@
 				364B9C1021403C74006D269B /* Main.storyboard in Resources */,
 				364B9C1221403C76006D269B /* Assets.xcassets in Resources */,
 				364B9C1521403C76006D269B /* LaunchScreen.storyboard in Resources */,
-				364B9C1F21406219006D269B /* Jumpy Jump in Resources */,
 				364B9C0921403C74006D269B /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -19,7 +19,7 @@ class GameScene: SKScene {
     var hud:SKNode!
     var player:SKNode!
     var scaleFactor:CGFloat!
-    var startButton = SKSpriteNode(imageNamed: )
+    //var startButton = SKSpriteNode(imageNamed: )
     
     var endOfGamePosition = 0
     let motionManager = CMMotionManager()
@@ -38,7 +38,11 @@ class GameScene: SKScene {
     override init(size:CGSize) {
         super.init(size: size)
         
-        backgroundColor = SKColor.whiteColor()
+        backgroundColor = SKColor.white
+        scaleFactor = self.size.width / 320
+        
+        background = createBackground()
+        addChild(background)
         
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
