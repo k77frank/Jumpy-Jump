@@ -25,7 +25,12 @@ extension GameScene {
         return background
     }
     
-    func createMidground() -> SKNode {
+    func createPlayer() -> SKNode {
+        let playerNode = SKNode
+        playerNode.position = CGPoint(x: 0, y: 0)
+        let sprite = SKSpriteNode(imageNamed: "doodle")
+        playerNode.addChild(sprite)
         
+        playerNode.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width / 2)
     }
 }
