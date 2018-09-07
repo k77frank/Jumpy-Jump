@@ -26,11 +26,18 @@ extension GameScene {
     }
     
     func createPlayer() -> SKNode {
-        let playerNode = SKNode
+        let playerNode = SKNode()
         playerNode.position = CGPoint(x: 0, y: 0)
         let sprite = SKSpriteNode(imageNamed: "doodle")
         playerNode.addChild(sprite)
         
         playerNode.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width / 2)
+        playerNode.physicsBody?.isDynamic = true
+        playerNode.physicsBody?.allowsRotation = false
+        playerNode.physicsBody?.restitution = 1
+        playerNode.physicsBody?.friction = 0
+        playerNode.physicsBody?.angularDamping = 0
+        playerNode.physicsBody?.linearDamping = 0
+        playerNode.physicsBody?.usesPreciseCollisionDetection = true
     }
 }
