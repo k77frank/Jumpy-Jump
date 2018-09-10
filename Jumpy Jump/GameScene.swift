@@ -44,6 +44,12 @@ class GameScene: SKScene {
         background = createBackground()
         addChild(background)
         
+        foreground = SKNode()
+        addChild(foreground)
+        
+        player = createPlayer()
+        foreground.addChild(player)
+        
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         }

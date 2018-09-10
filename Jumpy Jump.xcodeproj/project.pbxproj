@@ -15,6 +15,7 @@
 		364B9C1221403C76006D269B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 364B9C1121403C76006D269B /* Assets.xcassets */; };
 		364B9C1521403C76006D269B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 364B9C1321403C76006D269B /* LaunchScreen.storyboard */; };
 		364B9C1D21405F17006D269B /* GameElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364B9C1C21405F17006D269B /* GameElements.swift */; };
+		36B16EFE2147067000A57E9E /* GenericNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36B16EFD2147067000A57E9E /* GenericNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		364B9C1421403C76006D269B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		364B9C1621403C76006D269B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		364B9C1C21405F17006D269B /* GameElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElements.swift; sourceTree = "<group>"; };
+		36B16EFD2147067000A57E9E /* GenericNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				364B9C0821403C74006D269B /* Actions.sks */,
 				364B9C0A21403C74006D269B /* GameScene.swift */,
 				364B9C1C21405F17006D269B /* GameElements.swift */,
+				36B16EFD2147067000A57E9E /* GenericNode.swift */,
 				364B9C0C21403C74006D269B /* GameViewController.swift */,
 				364B9C0E21403C74006D269B /* Main.storyboard */,
 				364B9C1121403C76006D269B /* Assets.xcassets */,
@@ -148,6 +151,7 @@
 				364B9C1D21405F17006D269B /* GameElements.swift in Sources */,
 				364B9C0B21403C74006D269B /* GameScene.swift in Sources */,
 				364B9C0D21403C74006D269B /* GameViewController.swift in Sources */,
+				36B16EFE2147067000A57E9E /* GenericNode.swift in Sources */,
 				364B9C0521403C74006D269B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
