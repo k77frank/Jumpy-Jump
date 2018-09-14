@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		363E6FF0214B18F200D5FE03 /* PlatformNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363E6FEF214B18F200D5FE03 /* PlatformNode.swift */; };
 		364B9C0521403C74006D269B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364B9C0421403C74006D269B /* AppDelegate.swift */; };
 		364B9C0921403C74006D269B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 364B9C0821403C74006D269B /* Actions.sks */; };
 		364B9C0B21403C74006D269B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364B9C0A21403C74006D269B /* GameScene.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		363E6FEF214B18F200D5FE03 /* PlatformNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformNode.swift; sourceTree = "<group>"; };
 		364B9C0121403C74006D269B /* Jumpy Jump.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jumpy Jump.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		364B9C0421403C74006D269B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		364B9C0821403C74006D269B /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				364B9C0A21403C74006D269B /* GameScene.swift */,
 				364B9C1C21405F17006D269B /* GameElements.swift */,
 				36B16EFD2147067000A57E9E /* GenericNode.swift */,
+				363E6FEF214B18F200D5FE03 /* PlatformNode.swift */,
 				364B9C0C21403C74006D269B /* GameViewController.swift */,
 				364B9C0E21403C74006D269B /* Main.storyboard */,
 				364B9C1121403C76006D269B /* Assets.xcassets */,
@@ -152,6 +155,7 @@
 				364B9C0B21403C74006D269B /* GameScene.swift in Sources */,
 				364B9C0D21403C74006D269B /* GameViewController.swift in Sources */,
 				36B16EFE2147067000A57E9E /* GenericNode.swift in Sources */,
+				363E6FF0214B18F200D5FE03 /* PlatformNode.swift in Sources */,
 				364B9C0521403C74006D269B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +301,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KAQYXVT4YF;
 				INFOPLIST_FILE = "Jumpy Jump/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -314,6 +319,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KAQYXVT4YF;
 				INFOPLIST_FILE = "Jumpy Jump/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
