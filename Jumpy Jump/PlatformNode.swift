@@ -8,6 +8,6 @@
 
 import SpriteKit
 
-//class PlatformNode: GenericNode {
-//    var platformType:PlatformType
-//}
+class PlatformNode: GenericNode {
+    var platformType:PlatformType!  
+}

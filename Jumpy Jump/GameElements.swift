@@ -49,5 +49,7 @@ extension GameScene {
         return playerNode
     }
     
-    //func createPlatformAtPosition (position) 
+    func createPlatformAtPosition (position:CGPoint, ofType type:PlatformType) -> PlatformNode {
+        
+    }
 }
