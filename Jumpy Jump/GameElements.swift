@@ -50,6 +50,54 @@ extension GameScene {
     }
     
     func createPlatformAtPosition (position:CGPoint, ofType type:PlatformType) -> PlatformNode {
+        let node = PlatformNode()
+        let position = CGPoint(x: position.x * scaleFactor, y: position.y)
+        node.position = position
+        node.name = "PLATFORMNODE"
+        node.platformType = type
         
+        var sprite:SKSpriteNode
+        
+        if type == PlatformType.normalBrick {
+            sprite = SKSpriteNode(imageNamed: "Platform1")
+        }
+        else {
+            sprite = SKSpriteNode(imageNamed: "Platform2")
+            
+        }
+        sprite.setScale(0.7)
+        node.addChild(sprite)
+        node.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+        node.physicsBody?.isDynamic = false
+        node.physicsBody?.categoryBitMask = CollisionBitMask.Brick
+        node.physicsBody?.contactTestBitMask = 0
+        
+        return node
+    }
+    
+    func createCoinAtPosition (position:CGPoint, ofType type:CoinType) -> CoinNode {
+        let node = CoinNode()
+        let position = CGPoint(x: position.x * scaleFactor, y: position.y)
+        node.position = position
+        node.name = "COINNODE"
+        node.coinType = type
+        
+        var sprite:SKSpriteNode
+        
+        if type == CoinType.normalCoin {
+            sprite = SKSpriteNode(imageNamed: "Platform1")
+        }
+        else {
+            sprite = SKSpriteNode(imageNamed: "Platform2")
+            
+        }
+        sprite.setScale(0.7)
+        node.addChild(sprite)
+        node.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+        node.physicsBody?.isDynamic = false
+        node.physicsBody?.categoryBitMask = CollisionBitMask.Brick
+        node.physicsBody?.contactTestBitMask = 0
+        
+        return node
     }
 }

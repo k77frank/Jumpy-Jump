@@ -50,6 +50,9 @@ class GameScene: SKScene {
         player = createPlayer()
         foreground.addChild(player)
         
+        let platform = createPlatformAtPosition(position: CGPoint(x: 100, y: 100), ofType: PlatformType.normalBrick)
+        foreground.addChild(platform)
+        
     }
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         }
