@@ -15,4 +15,9 @@ enum CoinType:Int {
 
 class CoinNode: GenericNode {
     var coinType:CoinType!
+    
+    override func collisionWithPlayer(player: SKNode) -> Bool {
+        self.removeFromParent()
+        return true
+    }
 }

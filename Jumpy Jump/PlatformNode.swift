@@ -9,5 +9,19 @@
 import SpriteKit
 
 class PlatformNode: GenericNode {
-    var platformType:PlatformType!  
+    var platformType:PlatformType!
+    
+    override func collisionWithPlayer(player: SKNode) -> Bool {
+        var down:Int
+        down = Int((player.physicsBody?.velocity.dy)!)
+        if (down <= 0) {
+            
+            player.physicsBody?.velocity = CGVector(dx: player.physicsBody!.velocity.dx, dy: 1200)
+            
+            if platformType == PlatformType.breakableBrick {
+                self.removeFromParent()
+            }
+        }
+        return false
+    }
 }

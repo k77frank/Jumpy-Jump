@@ -20,5 +20,13 @@ enum PlatformType:Int {
 }
 
 class GenericNode: SKNode {
-
+    func collisionWithPlayer (player:SKNode) -> Bool {
+        return false
+    }
+    
+    func shouldRemoveNode (playerY:CGFloat) {
+        if playerY > self.position.y + 300 {
+            self.removeFromParent()
+        }
+    }
 }

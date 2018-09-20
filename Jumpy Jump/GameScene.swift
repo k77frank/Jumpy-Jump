@@ -10,7 +10,7 @@ import SpriteKit
 import GameplayKit
 import CoreMotion
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var background:SKNode!
     var midground:SKNode!
@@ -50,11 +50,32 @@ class GameScene: SKScene {
         player = createPlayer()
         foreground.addChild(player)
         
-        let platform = createPlatformAtPosition(position: CGPoint(x: 100, y: 100), ofType: PlatformType.normalBrick)
+        let platform = createPlatformAtPosition(position: CGPoint(x: self.frame.size.width/2, y: 100), ofType: PlatformType.normalBrick)
         foreground.addChild(platform)
         
+        let coin = createCoinAtPosition(position: CGPoint(x: 15, y: 50), ofType: CoinType.specialCoin)
+        foreground.addChild(coin)
+        
+        physicsWorld.gravity = CGVector(dx: 0, dy: -3)
+        physicsWorld.contactDelegate = self
     }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        var otherNode:SKNode!
+        
+        if contact.bodyA.node != player {
+            otherNode = contact.bodyA.node
+        }
+        else {
+            otherNode = contact.bodyB.node
+        }
+        
+        (otherNode as! GenericNode).collisionWithPlayer(player: player)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        player.physicsBody?.isDynamic = true
+        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 170))
         }
 
     

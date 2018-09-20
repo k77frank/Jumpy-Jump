@@ -27,11 +27,10 @@ extension GameScene {
     
     func createPlayer() -> SKNode {
         let playerNode = SKNode()
-        playerNode.position = CGPoint(x: 100, y: 0)
+        playerNode.position = CGPoint(x: self.frame.size.width/2, y: 50)
         let sprite = SKSpriteNode(imageNamed: "doodle")
         sprite.setScale(0.5)
         playerNode.addChild(sprite)
-        
         playerNode.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width / 2)
         playerNode.physicsBody?.isDynamic = false
         playerNode.physicsBody?.allowsRotation = false
@@ -67,10 +66,12 @@ extension GameScene {
         }
         sprite.setScale(0.7)
         node.addChild(sprite)
-        node.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+        node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 500, height: 5), center: CGPoint(x: position.x, y: position.y-40))
+        print(position.x)
+        print(self.frame.size.width/2)
         node.physicsBody?.isDynamic = false
         node.physicsBody?.categoryBitMask = CollisionBitMask.Brick
-        node.physicsBody?.contactTestBitMask = 0
+        node.physicsBody?.collisionBitMask = 0
         
         return node
     }
@@ -85,18 +86,17 @@ extension GameScene {
         var sprite:SKSpriteNode
         
         if type == CoinType.normalCoin {
-            sprite = SKSpriteNode(imageNamed: "Platform1")
+            sprite = SKSpriteNode(imageNamed: "Coin1")
         }
         else {
-            sprite = SKSpriteNode(imageNamed: "Platform2")
+            sprite = SKSpriteNode(imageNamed: "Coin2")
             
         }
-        sprite.setScale(0.7)
         node.addChild(sprite)
-        node.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+        node.physicsBody = SKPhysicsBody(circleOfRadius: 5)
         node.physicsBody?.isDynamic = false
-        node.physicsBody?.categoryBitMask = CollisionBitMask.Brick
-        node.physicsBody?.contactTestBitMask = 0
+        node.physicsBody?.categoryBitMask = CollisionBitMask.Coin
+        node.physicsBody?.collisionBitMask = 0
         
         return node
     }
