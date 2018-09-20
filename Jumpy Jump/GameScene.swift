@@ -27,6 +27,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var xAcceleration:CGFloat = 0.0
     var scoreLabel:SKLabelNode!
     var coinLabel:SKLabelNode!
+    var jump = true
     
     var playerMaxY:Int!
     var gameOver = false
@@ -50,14 +51,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player = createPlayer()
         foreground.addChild(player)
         
-        let platform = createPlatformAtPosition(position: CGPoint(x: self.frame.size.width/2, y: 100), ofType: PlatformType.normalBrick)
+        let platform = createPlatformAtPosition(position: CGPoint(x: 150, y: 50), ofType: PlatformType.normalBrick)
         foreground.addChild(platform)
+        
+        let platform1 = createPlatformAtPosition(position: CGPoint(x: 150, y: 180), ofType: PlatformType.normalBrick)
+        foreground.addChild(platform1)
         
         let coin = createCoinAtPosition(position: CGPoint(x: 15, y: 50), ofType: CoinType.specialCoin)
         foreground.addChild(coin)
         
         physicsWorld.gravity = CGVector(dx: 0, dy: -3)
         physicsWorld.contactDelegate = self
+        
+        motionManager.accelerometerUpdateInterval = 0.2
+        motionManager.startAccelerometerUpdates()
+        
     }
     
     func didBegin(_ contact: SKPhysicsContact) {
@@ -73,14 +81,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         (otherNode as! GenericNode).collisionWithPlayer(player: player)
     }
     
+    override func didSimulatePhysics() {
+        if player.position.x < -20 {
+            player.position = CGPoint(x: self.size.width + 20, y: player.position.y)
+        }
+        else if (player.position.x > self.size.width + 20) {
+            player.position = CGPoint(x: 20, y: player.position.y)
+        }
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         player.physicsBody?.isDynamic = true
-        player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 170))
+        if jump {
+            player.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 50))
+            jump = false
         }
+    }
 
     
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+        if let accelerometerData = motionManager.accelerometerData {
+            player.physicsBody?.velocity.dx = CGFloat(accelerometerData.acceleration.x * 500)
+            //self.xAcceleration = CGFloat(accelerometerData.acceleration.x * 175)
+            
+        }
     }
 }

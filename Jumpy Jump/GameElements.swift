@@ -31,7 +31,8 @@ extension GameScene {
         let sprite = SKSpriteNode(imageNamed: "doodle")
         sprite.setScale(0.5)
         playerNode.addChild(sprite)
-        playerNode.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width / 2)
+        playerNode.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+        print("Player", sprite.size.width)
         playerNode.physicsBody?.isDynamic = false
         playerNode.physicsBody?.allowsRotation = false
         playerNode.physicsBody?.restitution = 1
@@ -64,11 +65,11 @@ extension GameScene {
             sprite = SKSpriteNode(imageNamed: "Platform2")
             
         }
-        sprite.setScale(0.7)
+        print("Platform Width", sprite.size)
         node.addChild(sprite)
-        node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 500, height: 5), center: CGPoint(x: position.x, y: position.y-40))
-        print(position.x)
-        print(self.frame.size.width/2)
+        node.physicsBody = SKPhysicsBody(rectangleOf: sprite.size)
+        print("Position", position.x)
+        print("Platform", node.position.x)
         node.physicsBody?.isDynamic = false
         node.physicsBody?.categoryBitMask = CollisionBitMask.Brick
         node.physicsBody?.collisionBitMask = 0
@@ -93,7 +94,7 @@ extension GameScene {
             
         }
         node.addChild(sprite)
-        node.physicsBody = SKPhysicsBody(circleOfRadius: 5)
+        node.physicsBody = SKPhysicsBody(circleOfRadius: sprite.size.width/2)
         node.physicsBody?.isDynamic = false
         node.physicsBody?.categoryBitMask = CollisionBitMask.Coin
         node.physicsBody?.collisionBitMask = 0
