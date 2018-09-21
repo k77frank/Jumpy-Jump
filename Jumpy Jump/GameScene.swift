@@ -22,6 +22,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     //var startButton = SKSpriteNode(imageNamed: )
     
     var endOfGamePosition = 0
+    var highest = CGFloat(0.0)
     let motionManager = CMMotionManager()
     
     var xAcceleration:CGFloat = 0.0
@@ -29,6 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var coinLabel:SKLabelNode!
     var jump = true
     
+    var currentMaxY:Int!
     var playerMaxY:Int!
     var gameOver = false
     
@@ -51,11 +53,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player = createPlayer()
         foreground.addChild(player)
         
+        currentMaxY = 80
+        
         let platform = createPlatformAtPosition(position: CGPoint(x: 150, y: 50), ofType: PlatformType.normalBrick)
         foreground.addChild(platform)
         
-        let platform1 = createPlatformAtPosition(position: CGPoint(x: 150, y: 180), ofType: PlatformType.normalBrick)
+        let platform1 = createPlatformAtPosition(position: CGPoint(x: 250, y: 150), ofType: PlatformType.normalBrick)
         foreground.addChild(platform1)
+        
+        let platform2 = createPlatformAtPosition(position: CGPoint(x: 180, y: 250), ofType: PlatformType.normalBrick)
+        foreground.addChild(platform2)
         
         let coin = createCoinAtPosition(position: CGPoint(x: 15, y: 50), ofType: CoinType.specialCoin)
         foreground.addChild(coin)
@@ -105,6 +112,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             player.physicsBody?.velocity.dx = CGFloat(accelerometerData.acceleration.x * 500)
             //self.xAcceleration = CGFloat(accelerometerData.acceleration.x * 175)
             
+        }
+        if player.position.y > 150 {
+            background.position = CGPoint(x: 0, y: -((player.position.y - 200)))
+            foreground.position = CGPoint(x: 0,y: -((player.position.y - 200)))
         }
     }
 }
